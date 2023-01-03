@@ -1,0 +1,16 @@
+name: qc-project
+dependencies:
+  - python=3.9
+  - pip
+  - apple::tensorflow-deps
+  - matplotlib
+  - jupyter
+  - pandas
+  - pytorch
+  - torchvision
+  - pip:
+    - tensorflow-macos
+    - tensorflow-metal
+    - numpy
+    - qiskit
+    - qiskit[machine-learning]
