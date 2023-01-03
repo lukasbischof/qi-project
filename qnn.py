@@ -8,7 +8,7 @@ from qiskit.algorithms.optimizers import COBYLA
 from qiskit.circuit.library import RealAmplitudes, ZZFeatureMap
 from qiskit.utils import algorithm_globals, QuantumInstance
 from qiskit_machine_learning.algorithms import NeuralNetworkClassifier
-from qiskit_machine_learning.neural_networks import SamplerQNN
+from qiskit_machine_learning.neural_networks import SamplerQNN, EstimatorQNN
 from sklearn.metrics import ConfusionMatrixDisplay
 
 # Configuration
@@ -63,7 +63,6 @@ if __name__ == '__main__':
         output_shape=OUTPUT_SHAPE,
         interpret=parity,
     )
-
 
     def callback_graph(weights, obj_func_eval):
         print(f'Objective function value: {obj_func_eval}')
