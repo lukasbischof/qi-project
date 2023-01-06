@@ -1,16 +1,24 @@
 name: qc-project
+channels:
+  - apple
+  - defaults
+  - conda-forge
 dependencies:
-  - python=3.9
+  - python=3.8
   - pip
-  - apple::tensorflow-deps
+  - tensorflow-deps
+  - scikit-learn
+  - scipy
   - matplotlib
   - jupyter
   - pandas
   - pytorch
   - torchvision
+  - tensorboard=2.6.0
   - pip:
-    - tensorflow-macos
-    - tensorflow-metal
-    - numpy
+    - numpy==1.22.1
     - qiskit
     - qiskit[machine-learning]
+    - tensorflow-estimator==2.7.0
+    - tensorflow-macos==2.7.0
+    - tensorflow-metal==0.3.0
