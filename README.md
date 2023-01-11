@@ -19,6 +19,6 @@
 4. Notebook für 2. data set ausführen
 5. Werte in Tabelle...
 
-QSVM -> Lukas
+QSVM -> Karin
 QNN -> Stefan
-Hybrid -> Karin
+Hybrid -> Lukas
