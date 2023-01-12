@@ -39,6 +39,32 @@ Fold 9 accuracy 77.20% on test set, trained in 958.62753 seconds
 Accuracy mean: 81.16000000000001%, std: 2.3829393613770335
 ```
 
+## VLDS 10k
+
+**Using 100 epochs, CrossEntropyLoss**
+
+![vlds_10k](https://user-images.githubusercontent.com/8350985/212074378-66191150-5468-4036-b5d7-7c46fc20642d.png)
+
+```
+Fold 0 accuracy 99.84% on test set, trained in 6764.19394 seconds
+Fold 1 accuracy 99.48% on test set, trained in 6771.66353 seconds
+Fold 2 accuracy 83.68% on test set, trained in 6323.10434 seconds
+Fold 3 accuracy 98.92% on test set, trained in 6392.81630 seconds
+Fold 4 accuracy 99.44% on test set, trained in 6749.09463 seconds
+Fold 5 accuracy 99.56% on test set, trained in 6720.02865 seconds
+Fold 6 accuracy 99.84% on test set, trained in 6710.57284 seconds
+Fold 7 accuracy 99.88% on test set, trained in 6676.22929 seconds
+Fold 8 accuracy 99.88% on test set, trained in 6702.86400 seconds
+Fold 9 accuracy 99.80% on test set, trained in 6753.91673 seconds
+Accuracy mean: 98.03199999999998%, std: 4.792454068637487
+```
+
+Evaluation of 10 test items on quantum computer:
+
+```
+Accuracy: 80.00%
+```
+
 ## Custom 1k
 
 ![image](https://user-images.githubusercontent.com/8350985/212058558-fa59d12b-1a44-4cef-abf7-c6214cc6e20a.png)
