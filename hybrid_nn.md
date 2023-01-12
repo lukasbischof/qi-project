@@ -22,19 +22,37 @@ Accuracy mean: 96.0%, std: 1.7888543819998317
  
 ## VLDS 1k
 
-**Using 100 epochs, CrossEntropyLoss**
+**Using 100 epochs, NLLoss**
 
-![vlds_1k](https://user-images.githubusercontent.com/8350985/211932145-96076883-659a-4a78-bc5c-8641caff0e07.png)
+![image](https://user-images.githubusercontent.com/8350985/212051796-3993bc85-8e32-4ee8-9d74-dfe52955c966.png)
+```
+Fold 0 accuracy 81.60% on test set, trained in 959.82757 seconds
+Fold 1 accuracy 78.40% on test set, trained in 962.82789 seconds
+Fold 2 accuracy 82.40% on test set, trained in 961.66080 seconds
+Fold 3 accuracy 85.20% on test set, trained in 962.79903 seconds
+Fold 4 accuracy 80.80% on test set, trained in 961.43279 seconds
+Fold 5 accuracy 81.60% on test set, trained in 958.32169 seconds
+Fold 6 accuracy 82.40% on test set, trained in 961.09307 seconds
+Fold 7 accuracy 78.40% on test set, trained in 962.00527 seconds
+Fold 8 accuracy 83.60% on test set, trained in 960.43157 seconds
+Fold 9 accuracy 77.20% on test set, trained in 958.62753 seconds
+Accuracy mean: 81.16000000000001%, std: 2.3829393613770335
+```
+
+## Custom 1k
+
+![image](https://user-images.githubusercontent.com/8350985/212058558-fa59d12b-1a44-4cef-abf7-c6214cc6e20a.png)
 
 ```
-Fold 0 accuracy 82.40%, trained in 707.56838 seconds
-Fold 1 accuracy 86.80%, trained in 709.02130 seconds
-Fold 2 accuracy 84.80%, trained in 710.47359 seconds
-Fold 3 accuracy 78.40%, trained in 709.60128 seconds
-Fold 4 accuracy 84.00%, trained in 710.02297 seconds
-Fold 5 accuracy 79.60%, trained in 708.87286 seconds
-Fold 6 accuracy 78.80%, trained in 712.12679 seconds
-Fold 7 accuracy 77.20%, trained in 712.06041 seconds
-Fold 8 accuracy 84.40%, trained in 710.98571 seconds
-Fold 9 accuracy 82.40%, trained in 712.48468 seconds
+Fold 0 accuracy 72.80% on test set, trained in 958.67977 seconds
+Fold 1 accuracy 72.80% on test set, trained in 960.01930 seconds
+Fold 2 accuracy 72.80% on test set, trained in 962.09803 seconds
+Fold 3 accuracy 72.80% on test set, trained in 959.60226 seconds
+Fold 4 accuracy 72.80% on test set, trained in 954.58436 seconds
+Fold 5 accuracy 72.80% on test set, trained in 957.46893 seconds
+Fold 6 accuracy 72.80% on test set, trained in 958.87594 seconds
+Fold 7 accuracy 72.80% on test set, trained in 958.93899 seconds
+Fold 8 accuracy 72.80% on test set, trained in 960.49738 seconds
+Fold 9 accuracy 72.80% on test set, trained in 959.02508 seconds
+Accuracy mean: 72.79999999999998%, std: 1.4210854715202004e-14
 ```
