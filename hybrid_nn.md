@@ -102,3 +102,21 @@ Fold 8 accuracy 72.80% on test set, trained in 960.49738 seconds
 Fold 9 accuracy 72.80% on test set, trained in 959.02508 seconds
 Accuracy mean: 72.79999999999998%, std: 1.4210854715202004e-14
 ```
+
+## Custom 10k
+
+![image](https://user-images.githubusercontent.com/8350985/212105222-bb75a8a0-1242-46e7-b3be-3901381d522a.png)
+
+```
+Fold 0 accuracy 70.32% on test set, trained in 9624.00801 seconds
+Fold 1 accuracy 70.32% on test set, trained in 9627.44166 seconds
+Fold 2 accuracy 70.32% on test set, trained in 9641.67902 seconds
+Fold 3 accuracy 70.32% on test set, trained in 9630.13388 seconds
+Fold 4 accuracy 70.32% on test set, trained in 9613.54807 seconds
+Fold 5 accuracy 70.32% on test set, trained in 9632.72226 seconds
+Fold 6 accuracy 70.32% on test set, trained in 9619.94806 seconds
+Fold 7 accuracy 70.32% on test set, trained in 9597.62820 seconds
+Fold 8 accuracy 70.32% on test set, trained in 9628.16740 seconds
+Fold 9 accuracy 70.32% on test set, trained in 9608.07188 seconds
+Accuracy mean: 70.32000000000002%, std: 1.4210854715202004e-14
+```
