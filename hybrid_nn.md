@@ -2,25 +2,22 @@
 
 ## VLDS 100
 
-**Using 100 epochs, Cross-Entropy Loss**
-
-![vlds_100](https://user-images.githubusercontent.com/8350985/211929774-310176be-67d5-4872-97a1-0b1b7b798fca.png)
-
 **Using 100 epochs, NLLLoss, plotting neg. log. loss**
 
-![vlds_100_2](https://user-images.githubusercontent.com/8350985/211932632-3b723d53-d17e-415c-92a6-9db8b260791d.png)
+![vlds_100](https://user-images.githubusercontent.com/8350985/212035722-fd110431-7761-4cd3-9a8a-bcbeacd17526.png)
 
 ```
-Fold 0 accuracy 96.00%, trained in 80.76745 seconds
-Fold 1 accuracy 48.00%, trained in 81.82390 seconds
-Fold 2 accuracy 96.00%, trained in 81.61044 seconds
-Fold 3 accuracy 96.00%, trained in 80.76350 seconds
-Fold 4 accuracy 64.00%, trained in 81.44188 seconds
-Fold 5 accuracy 96.00%, trained in 82.24458 seconds
-Fold 6 accuracy 36.00%, trained in 82.41159 seconds
-Fold 7 accuracy 96.00%, trained in 82.34044 seconds
-Fold 8 accuracy 96.00%, trained in 82.33086 seconds
-Fold 9 accuracy 96.00%, trained in 82.20766 seconds
+Fold 0 accuracy 100.00% on test set, trained in 76.78086 seconds
+Fold 1 accuracy 96.00% on test set, trained in 76.07456 seconds
+Fold 2 accuracy 96.00% on test set, trained in 76.21540 seconds
+Fold 3 accuracy 96.00% on test set, trained in 76.56493 seconds
+Fold 4 accuracy 96.00% on test set, trained in 76.62916 seconds
+Fold 5 accuracy 92.00% on test set, trained in 77.82518 seconds
+Fold 6 accuracy 96.00% on test set, trained in 77.80424 seconds
+Fold 7 accuracy 96.00% on test set, trained in 77.39037 seconds
+Fold 8 accuracy 96.00% on test set, trained in 77.30363 seconds
+Fold 9 accuracy 96.00% on test set, trained in 77.76591 seconds
+Accuracy mean: 96.0%, std: 1.7888543819998317
 ```
  
 ## VLDS 1k

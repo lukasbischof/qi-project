@@ -123,8 +123,8 @@ class MyDataset(Dataset):
 class Net(nn.Module):
     def __init__(self, feature_dimension, backend):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(feature_dimension, 64)
-        self.fc2 = nn.Linear(64, 1)
+        self.fc1 = nn.Linear(feature_dimension, 16)
+        self.fc2 = nn.Linear(16, 1)
         self.hybrid = Hybrid(backend, shots=100, shift=np.pi / 2)
 
     def forward(self, x):
@@ -200,13 +200,20 @@ class HybridNNModel:
 
 
 if __name__ == '__main__':
+    # Configurations
+    dataset_name = 'vlds_1k'
+    folds = 10
+    epochs = 100
+    loss_func = nn.NLLLoss
+
+    # Setup Quantum Backend
     simulator = qiskit.Aer.get_backend('aer_simulator')
 
     circuit = QuantumCircuit(1, simulator, 100)
     print('Expected value for rotation pi {}'.format(circuit.run([np.pi])[0]))
     circuit._circuit.draw(output='mpl')
 
-    dataset_name = 'vlds_100'
+    # Prepare Data
     df = pd.read_csv(f'datasets/{dataset_name}.csv', index_col=0)
     feature_dimension = df.shape[1] - 1
 
@@ -225,24 +232,23 @@ if __name__ == '__main__':
 
     test_loader = torch.utils.data.DataLoader(MyDataset(test_features, test_labels), batch_size=1, shuffle=True)
 
-    folds = 10
-    epochs = 100
+    # Train and test the model
     models = [
         HybridNNModel(
             Net(feature_dimension=feature_dimension, backend=simulator),
             fold=fold,
-            loss_func=nn.NLLLoss,
+            loss_func=loss_func,
             epochs=epochs,
             dataset_name=dataset_name
         ) for fold in range(folds)
     ]
-    k_fold = KFold(n_splits=10)
 
     for model in models:
         if model.load():
             print(f'Loaded model {model.save_file_name()}')
 
     if not all(model.loaded for model in models):
+        k_fold = KFold(n_splits=10)
         with concurrent.futures.ProcessPoolExecutor() as executor:
             futures = []
             for i, (train_index, test_index) in enumerate(k_fold.split(train_features)):
@@ -258,7 +264,7 @@ if __name__ == '__main__':
             executor.shutdown(wait=True)
             models = [future.result() for future in futures]
 
-        fig, axs = plt.subplots(2, folds // 2, figsize=(folds * 5, 2 * 5))
+        fig, axs = plt.subplots(2, folds // 2, figsize=(folds * 2, 2 * 2))
         axs[0, 0].set_xlabel('Epoch')
         axs[0, 0].set_ylabel('Neg Log Likelihood Loss')
         for i, model in enumerate(models):
@@ -268,8 +274,12 @@ if __name__ == '__main__':
             ax.grid()
         plt.show()
 
+    accuracies = np.array([model.score(test_loader) for model in models])
     for i, model in enumerate(models):
         if not model.loaded:
             model.save()
 
-        print('Fold %d accuracy %.2f%%, trained in %.5f seconds' % (i, model.score(test_loader), model.execution_time))
+        print('Fold %d accuracy %.2f%% on test set, trained in %.5f seconds' % (
+            i, accuracies[i], model.execution_time
+        ))
+    print(f"Accuracy mean: {accuracies.mean()}%, std: {accuracies.std()}")
