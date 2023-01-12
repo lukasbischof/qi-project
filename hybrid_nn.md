@@ -120,3 +120,23 @@ Fold 8 accuracy 70.32% on test set, trained in 9628.16740 seconds
 Fold 9 accuracy 70.32% on test set, trained in 9608.07188 seconds
 Accuracy mean: 70.32000000000002%, std: 1.4210854715202004e-14
 ```
+
+## Adhoc 10k
+
+**Using 100 epochs, CrossEntropyLoss**
+
+![adhoc_10k](https://user-images.githubusercontent.com/8350985/212172131-9e747a30-40da-4032-9e9a-7ea642b87b1b.png)
+
+```
+Fold 0 accuracy 62.04% on test set, trained in 6803.07014 seconds
+Fold 1 accuracy 53.48% on test set, trained in 6774.40922 seconds
+Fold 2 accuracy 57.64% on test set, trained in 6668.53218 seconds
+Fold 3 accuracy 59.36% on test set, trained in 6843.34581 seconds
+Fold 4 accuracy 50.64% on test set, trained in 6814.30222 seconds
+Fold 5 accuracy 52.76% on test set, trained in 6757.89940 seconds
+Fold 6 accuracy 55.16% on test set, trained in 6652.42507 seconds
+Fold 7 accuracy 60.28% on test set, trained in 6844.28554 seconds
+Fold 8 accuracy 52.32% on test set, trained in 6807.48312 seconds
+Fold 9 accuracy 59.04% on test set, trained in 6670.76669 seconds
+Accuracy mean: 56.27199999999999%, std: 3.702790299220306
+```
