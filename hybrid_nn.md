@@ -65,6 +65,26 @@ Evaluation of 10 test items on quantum computer:
 Accuracy: 80.00%
 ```
 
+## Custom 100
+
+![custom_100](https://user-images.githubusercontent.com/8350985/212082692-6a981168-d9b5-44c7-bfd4-266992896d93.png)
+
+**Using 100 epochs, NLLLoss**
+
+```
+Fold 0 accuracy 72.00% on test set, trained in 76.53786 seconds
+Fold 1 accuracy 72.00% on test set, trained in 77.16866 seconds
+Fold 2 accuracy 72.00% on test set, trained in 77.24908 seconds
+Fold 3 accuracy 72.00% on test set, trained in 77.00466 seconds
+Fold 4 accuracy 72.00% on test set, trained in 76.12173 seconds
+Fold 5 accuracy 72.00% on test set, trained in 77.86548 seconds
+Fold 6 accuracy 72.00% on test set, trained in 77.63027 seconds
+Fold 7 accuracy 72.00% on test set, trained in 78.20151 seconds
+Fold 8 accuracy 72.00% on test set, trained in 78.11769 seconds
+Fold 9 accuracy 72.00% on test set, trained in 77.53465 seconds
+Accuracy mean: 72.0%, std: 0.0
+```
+
 ## Custom 1k
 
 ![image](https://user-images.githubusercontent.com/8350985/212058558-fa59d12b-1a44-4cef-abf7-c6214cc6e20a.png)
