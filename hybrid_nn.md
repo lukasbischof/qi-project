@@ -121,6 +121,46 @@ Fold 9 accuracy 70.32% on test set, trained in 9608.07188 seconds
 Accuracy mean: 70.32000000000002%, std: 1.4210854715202004e-14
 ```
 
+## Adhoc 100
+
+**Using 200 epochs, CrossEntropyLoss**
+
+![adhoc_100](https://user-images.githubusercontent.com/8350985/212484560-e7d14fe5-8f07-4cb4-b46e-57e446952208.png)
+
+```
+Fold 0 accuracy 56.00% on test set, trained in 159.94229 seconds
+Fold 1 accuracy 52.00% on test set, trained in 160.86594 seconds
+Fold 2 accuracy 68.00% on test set, trained in 159.31214 seconds
+Fold 3 accuracy 48.00% on test set, trained in 160.42371 seconds
+Fold 4 accuracy 72.00% on test set, trained in 160.53258 seconds
+Fold 5 accuracy 56.00% on test set, trained in 161.49501 seconds
+Fold 6 accuracy 56.00% on test set, trained in 160.66374 seconds
+Fold 7 accuracy 52.00% on test set, trained in 161.78155 seconds
+Fold 8 accuracy 68.00% on test set, trained in 160.98317 seconds
+Fold 9 accuracy 56.00% on test set, trained in 161.00550 seconds
+Accuracy mean: 58.4%, std: 7.631513611335564
+```
+
+## Adhoc 1k
+
+**Using 200 epochs, CrossEntropyLoss**
+
+![adhoc_1k](https://user-images.githubusercontent.com/8350985/212488825-31b6575e-430b-4496-8d8b-5105112b1ea4.png)
+
+```
+Fold 0 accuracy 62.00% on test set, trained in 1461.04065 seconds
+Fold 1 accuracy 56.00% on test set, trained in 1449.69642 seconds
+Fold 2 accuracy 62.00% on test set, trained in 1463.15211 seconds
+Fold 3 accuracy 59.20% on test set, trained in 1465.40207 seconds
+Fold 4 accuracy 57.60% on test set, trained in 1467.03516 seconds
+Fold 5 accuracy 50.40% on test set, trained in 1452.85427 seconds
+Fold 6 accuracy 60.00% on test set, trained in 1453.56368 seconds
+Fold 7 accuracy 72.00% on test set, trained in 1469.64044 seconds
+Fold 8 accuracy 65.20% on test set, trained in 1463.38965 seconds
+Fold 9 accuracy 62.40% on test set, trained in 1450.16790 seconds
+Accuracy mean: 60.67999999999999%, std: 5.428959384633487
+```
+
 ## Adhoc 10k
 
 **Using 100 epochs, CrossEntropyLoss**
