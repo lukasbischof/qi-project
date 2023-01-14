@@ -1,3 +1,5 @@
+import time
+
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import KFold
@@ -23,9 +25,11 @@ if __name__ == '__main__':
     test_labels = test_features.pop('label')
 
     models = []
+    execution_times = []
     k_fold = KFold(n_splits=10)
     for i, (train_index, test_index) in enumerate(k_fold.split(train_features)):
-        print(f"==> Fold {i+1}/{k_fold.get_n_splits()}")
+        start_time = time.time()
+        print(f"==> Fold {i + 1}/{k_fold.get_n_splits()}")
 
         current_train_features = train_features.iloc[train_index].to_numpy()
         current_train_labels = train_labels.iloc[train_index].to_numpy()
@@ -45,10 +49,11 @@ if __name__ == '__main__':
 
         model.fit(train_features, train_labels, epochs=10)
         models.append(model)
+        execution_times.append(time.time() - start_time)
 
     accuracies = np.array([model.evaluate(test_features, test_labels)[1] for model in models])
-    print(f"Accuracies: {accuracies}")
-    print(f"Average accuracy: {accuracies.mean()}, std: {accuracies.std()}")
-    # test_loss, test_acc = model.evaluate(test_features, test_labels)
+    print(', '.join(map(lambda accuracy: f'{accuracy:.2f}', accuracies)))
+    print('mean: {:.2f}, std: {:.2f}, mean training time: {:.0f}s'.format(accuracies.mean(), accuracies.std(),
+                                                                          np.array(execution_times).mean()))
     # print(f"Test accuracy: {test_acc}")
     # print(f"Test loss: {test_loss}")

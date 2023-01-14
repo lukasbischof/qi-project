@@ -201,7 +201,7 @@ class HybridNNModel:
 
 if __name__ == '__main__':
     # Configurations
-    dataset_name = 'vlds_1k'
+    dataset_name = 'adhoc_100'
     folds = 10
     epochs = 100
     loss_func = nn.NLLLoss
