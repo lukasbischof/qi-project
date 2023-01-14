@@ -1,12 +1,15 @@
+import time
+
+import numpy as np
 import pandas as pd
-import tensorflow as tf
+from sklearn.model_selection import KFold
 from tensorflow import keras
 from tensorflow.keras import layers
 
 if __name__ == '__main__':
     # Neural Network on VLDS data set
 
-    df = pd.read_csv('datasets/vlds.csv', index_col=0)
+    df = pd.read_csv('datasets/custom_dataset_10k.csv', index_col=0)
     feature_dimension = df.shape[1] - 1
 
     print(f"Feature dimension: {feature_dimension}")
@@ -18,24 +21,39 @@ if __name__ == '__main__':
     train_features = train.copy()
     test_features = test.copy()
 
-    train_labels = train_features.pop('label').to_numpy()
-    test_labels = test_features.pop('label').to_numpy()
+    train_labels = train_features.pop('label')
+    test_labels = test_features.pop('label')
 
-    # Setup Neural Network
-    model = keras.Sequential([
-        layers.Dense(64, activation='relu', input_shape=[feature_dimension]),
-        layers.Dense(64, activation='relu'),
-        layers.Dense(1, activation='sigmoid'),
-    ])
+    models = []
+    execution_times = []
+    k_fold = KFold(n_splits=10)
+    for i, (train_index, test_index) in enumerate(k_fold.split(train_features)):
+        start_time = time.time()
+        print(f"==> Fold {i + 1}/{k_fold.get_n_splits()}")
 
-    model.compile(
-        optimizer='adam',
-        loss='binary_crossentropy',
-        metrics=['accuracy'],
-    )
+        current_train_features = train_features.iloc[train_index].to_numpy()
+        current_train_labels = train_labels.iloc[train_index].to_numpy()
 
-    model.fit(train_features, train_labels, epochs=10)
+        # Setup Neural Network
+        model = keras.Sequential([
+            layers.Dense(64, activation='relu', input_shape=[feature_dimension]),
+            layers.Dense(64, activation='relu'),
+            layers.Dense(1, activation='sigmoid'),
+        ])
 
-    test_loss, test_acc = model.evaluate(test_features, test_labels)
-    print(f"Test accuracy: {test_acc}")
-    print(f"Test loss: {test_loss}")
+        model.compile(
+            optimizer='adam',
+            loss='binary_crossentropy',
+            metrics=['accuracy'],
+        )
+
+        model.fit(train_features, train_labels, epochs=10)
+        models.append(model)
+        execution_times.append(time.time() - start_time)
+
+    accuracies = np.array([model.evaluate(test_features, test_labels)[1] for model in models])
+    print(', '.join(map(lambda accuracy: f'{accuracy:.2f}', accuracies)))
+    print('mean: {:.2f}, std: {:.2f}, mean training time: {:.0f}s'.format(accuracies.mean(), accuracies.std(),
+                                                                          np.array(execution_times).mean()))
+    # print(f"Test accuracy: {test_acc}")
+    # print(f"Test loss: {test_loss}")
