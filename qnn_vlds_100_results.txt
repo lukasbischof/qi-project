@@ -1,0 +1,9 @@
+Scores: [0.56, 0.48, 0.44, 0.48, 0.44, 0.44, 0.64, 0.4, 0.44, 0.36]
+Times: [119.29005074501038, 119.6893401145935, 119.5688591003418, 119.48242592811584, 116.82789516448975, 118.86196327209473, 118.63335657119751, 118.52784633636475, 118.164724111557, 118.4684386253357]
+Average Training Time: 118.7514899969101
+
+Max index:  6
+Max score:  0.64
+ibmqfactory.load_account:WARNING:2023-01-15 00:53:12,132: Credentials are already in use. The existing account in the session will be replaced.
+Chosen backend: ibmq_jakarta
+Quantum scores: [0.56, 0.48, 0.44, 0.48, 0.44, 0.44, 0.64, 0.4, 0.44, 0.36]
